@@ -12,9 +12,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.userAuthorized()
   },
-
+  userAuthorized() {
+    wx.getSetting({
+      success: data => {
+        console.log(data.authSetting['scope.userInfo'])
+        if (data.authSetting['scope.userInfo']) {
+          wx.getUserInfo({
+            success: data => {
+              console.log(data)
+              this.setData({
+                authorized: true,
+                userInfo: data.userInfo
+              })
+            }
+          })
+        } else {
+          console.log("err")
+        }
+      }
+    })
+  }, 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -62,5 +81,14 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+  onGetUserInfo(event) {
+    const userInfo = event.detail.userInfo;
+    if (null != userInfo) {
+      this.setData({
+        userInfo: userInfo,
+        authorized: true
+      })
+    }
+  },
 })
