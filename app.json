@@ -1,0 +1,39 @@
+{
+  "pages": [
+    "pages/my/index",
+    "pages/domain/index"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#ffff00",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "default",
+    "navigationBarTitleText": "域名服务",
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "enablePullDownRefresh": false
+  },
+  "requiredBackgroundModes": [
+    "audio"
+  ],
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "selectedColor": "#000000",
+    "backgroundColor": "#ffffff",
+    "color": "#c7c7c7",
+    "list": [
+      {
+        "selectedIconPath": "/images/tab/book@highlight.png",
+        "pagePath": "pages/domain/index",
+        "text": "书籍",
+        "iconPath": "/images/tab/book.png"
+      },
+      {
+        "selectedIconPath": "/images/tab/classic@highlight.png",
+        "pagePath": "pages/my/index",
+        "text": "流行",
+        "iconPath": "/images/tab/classic.png"
+      }
+    ]
+  }
+}
