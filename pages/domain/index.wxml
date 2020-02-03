@@ -1,2 +1,4 @@
 <!--pages/domain/index.wxml-->
-<text>pages/domain/index.wxml</text>
+<block wx:for="{{testList}}" wx:key="id">  
+  <v-domain domain="{{item}}"/>
+</block>

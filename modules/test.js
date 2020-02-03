@@ -1,7 +1,9 @@
 import { HTTP } from "../utils/http.js"
 
-class Test {
-
+class TestModel extends HTTP {
+  findTestList (){
+    return this.request({"url":"/test"})
+  }
 }
 
-export {Test}
+export {TestModel}

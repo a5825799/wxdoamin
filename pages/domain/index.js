@@ -1,20 +1,26 @@
 // pages/domain/index.js
+import {TestModel} from "../../modules/test.js"
+const testModel = new TestModel()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    testList:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    const testList = testModel.findTestList().then((data)=>{
+      this.setData({
+        testList:data
+      })   
+    });
+    
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,0 +1,2 @@
+<!--components/domain/index.wxml-->
+<text>{{domain.name}}</text>
